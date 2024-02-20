@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 4</title>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Month Days</h1>
+  <p>Enter the month name (short form - Jan, Feb):</p>
+  <input type="text" id="monthName" required>
+  <button type="button" onclick="showDays()">Show Days</button>
+  <p id="result"></p>
+
+  <script>
+    function showDays() {
+      const monthName = document.getElementById("monthName").value.toUpperCase();
+      let days;
+
+      switch (monthName) {
+        case "JAN":
+          days = 31;
+          break;
+        case "FEB":
+          days = 28;
+          break;
+        case "MAR":
+          days = 31;
+          break;
+        case "APR":
+          days = 30;
+          break;
+        case "MAY":
+          days = 31;
+          break;
+        case "JUN":
+          days = 30;
+          break;
+        case "JUL":
+          days = 31;
+          break;
+        case "AUG":
+          days = 31;
+          break;
+        case "SEP":
+          days = 30;
+          break;
+        case "OCT":
+          days = 31;
+          break;
+        case "NOV":
+          days = 30;
+          break;
+        case "DEC":
+          days = 31;
+          break;
+        default:
+          days = "Invalid month";
+      }
+
+      if (days !== "Invalid month") {
+        document.getElementById("result").innerHTML = `The month of ${monthName} has <span class="red">${days}</span> days.`;
+      } else {
+        document.getElementById("result").innerHTML = "Please enter a valid month name.";
+      }
+    }
+  </script>
+</body>
+</html>
