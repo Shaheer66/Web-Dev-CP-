@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Class and ID</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <h2>Click on Elements to Find Class and ID</h2>
+
+    <div class="c1" id="class1">Click me (ID: div1, Class: class1)</div>
+    <button class="b1" id="btn1">Click me (ID: btn1, Class: button1)</button>
+
+    <script>
+        $(document).ready(function () {
+            $("*").click(function () {
+                var clickedElement = $(this);
+                var elementClass = clickedElement.attr("class");
+                var elementId = clickedElement.attr("id");
+
+                var alertMessage = "Class: ";
+                if (elementClass) {
+                    alertMessage += elementClass;
+                } else {
+                    alertMessage += "N/A";
+                }
+
+                if (elementId) {
+                    alertMessage += "\nID: " + elementId;
+                } else {
+                    alertMessage += "\nID: N/A";
+                }
+
+                alert(alertMessage);
+            });
+        });
+    </script>
+
+</body>
+</html>
