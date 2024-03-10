@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toggle Image Display</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+    <h2>Toggle Image Display</h2>
+    
+    <button id="toggleButton">Show Image</button>
+
+    <div id="imageContainer" style="display: none;">
+        <img id="image1" src="images.jpeg" alt="Preloaded Image">
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#toggleButton").click(function () {
+                $("#imageContainer").toggle();
+                var buttonText = $("#toggleButton").text();
+                if (buttonText === "Show Image") 
+                {
+                    $("#toggleButton").text("Hide Image");
+                } 
+                else
+                {
+                    $("#toggleButton").text("Show Image");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
